@@ -7,15 +7,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Infografika {
+    String tytul;
+    String adresGrafiki;
+    String adresStrony;
+    int szerokosc;
+    int wysokosc;
 
 
-    public static void main(String[] args) throws IOException {
-        String tekst = new String(Files.readAllBytes(Paths.get("gusInfoGraphic.xml")));
-        String tytul;
-        String adresGrafiki;
-        String adresStrony;
-        int szerokosc;
-        int wysokosc;
+    public Infografika(String tekst){
+
 
         Pattern pat = Pattern.compile("<title><!\\[CDATA\\[(.*)\\]\\]");
         Matcher m = pat.matcher(tekst);
@@ -62,13 +62,16 @@ public class Infografika {
             wysokosc = 0;
         }
 
-        System.out.println("Infografika:");
-        System.out.println("\t tytul:"+ tytul);
-        System.out.println("\t adres strony:"+adresStrony);
-        System.out.println("\t adres grafiki:"+adresGrafiki);
-        System.out.println("\t rozmiary:"+ szerokosc + "x" +wysokosc );
+
 
     }
 
 
+    public void print() {
+        System.out.print("\n\nInfografika:");
+        System.out.print("\n\t tytul:"+ tytul);
+        System.out.print("\n\t adres strony:"+adresStrony);
+        System.out.print("\n\t adres grafiki:"+adresGrafiki);
+        System.out.print("\n\t rozmiary:"+ szerokosc + "x" +wysokosc );
+    }
 }
