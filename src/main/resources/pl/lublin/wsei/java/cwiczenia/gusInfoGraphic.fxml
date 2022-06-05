@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="pl.lublin.wsei.java.cwiczenia.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lublin.wsei.java.cwiczenia.HelloController">
+    <children>
+        <Button layoutX="67.0" layoutY="56.0" mnemonicParsing="false" onAction="#btnOpenFileAction" style="-fx-font-style: italic; -fx-background-color: purple;" text="Otwórz plik" textFill="WHITE" />
+        <Label fx:id="lbFile" layoutX="171.0" layoutY="60.0" prefHeight="17.0" prefWidth="598.0" text="Proszę wybrać plik..." textFill="#808080" />
+      <ListView fx:id="lstInfografiki" layoutX="43.0" layoutY="95.0" prefHeight="478.0" prefWidth="402.0" />
+      <Label layoutX="456.0" layoutY="182.0" text="Miniaturka" />
+      <ImageView fx:id="imgMiniaturka" fitHeight="303.0" fitWidth="333.0" layoutX="456.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnPokazInfografike" layoutX="687.0" layoutY="509.0" mnemonicParsing="false" onAction="#btnPokaz" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: purple;" text="Pokaż" textFill="WHITE" />
+      <TextField fx:id="txtAdresStrony" layoutX="43.0" layoutY="597.0" prefHeight="25.0" prefWidth="636.0" />
+      <Button fx:id="btnPrzejdzDoStrony" layoutX="687.0" layoutY="597.0" mnemonicParsing="false" onAction="#btnPrzejdzDoStrony" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: purple;" text="Załaduj" textFill="WHITE" />
+      <Label layoutX="43.0" layoutY="580.0" text="Adres strony" />
+    </children>
+    <cursor>
+        <Cursor fx:constant="DEFAULT" />
+    </cursor>
+</AnchorPane>
